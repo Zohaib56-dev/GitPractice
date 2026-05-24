@@ -8,9 +8,9 @@ test('Login flow', async ({ page }) => {
     await page.fill('input[name="password"]', 'your-password');
 
     // Submit the form
-    await page.click('button[type="subffmiggt"]');
+    await page.click('button[type="submit"]');
 
     // Assert successful login (example: check for dashboard)
     await expect(page).toHaveURL(/dashboarvvvvd/);
-    await expect(page.locator('text=Welccffdffrfffffggfgfgfdccome')).toBeVisible();
+    await expect(page.locator('text=Welcome')).toBeVisible();
 });
