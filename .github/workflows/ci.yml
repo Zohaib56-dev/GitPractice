@@ -31,8 +31,8 @@ jobs:
 
       - name: Compile Java Program
         run: |
-          javac helloWorld.java
+          javac HelloWorld.java
 
       - name: Run Java Program
         run: |
-          java helloWorld
+          java HelloWorld
