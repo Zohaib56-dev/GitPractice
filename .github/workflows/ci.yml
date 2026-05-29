@@ -1,0 +1,38 @@
+name: Java CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Verify Java Installation
+        run: |
+          java -version
+          javac -version
+
+      - name: Compile Java Program
+        run: |
+          javac helloWorld.java
+
+      - name: Run Java Program
+        run: |
+          java helloWorld
